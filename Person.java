@@ -20,6 +20,8 @@ public class Person {
     }
 
     public void getStringInfo(){
+        boolean firstTwoValid;
+        boolean lastFourValid = false;
         Scanner scanObj = new Scanner(System.in);
         System.out.println("Now for the basic information.\nPlease enter your name and DOB:");
         System.out.println("First name: ");
@@ -28,12 +30,21 @@ public class Person {
         System.out.println("Last name: ");
         lastName = scanObj.next();
 
-        System.out.println("Class ID: ");
         scanObj.nextLine();
-        classId = scanObj.nextLine();
+
+        System.out.println("Class ID: ");
+        do{
+            System.out.println("Please enter a valid Class id the first two characters must be letters then a space followed by four numbers");
+            classId = scanObj.nextLine();
+            if(classId.length() != 7){
+                firstTwoValid = false;
+
+                continue;
+            }
+            firstTwoValid = Character.isLetter(classId.charAt(0)) && Character.isLetter(classId.charAt(1));
+            lastFourValid = Character.isDigit(classId.charAt(3)) && Character.isDigit(classId.charAt(4)) && Character.isDigit(classId.charAt(5)) && Character.isDigit(classId.charAt(6));
+        } while(!firstTwoValid || classId.charAt(2) != ' ' || !lastFourValid);
     }
-
-
     public void getIntInfo(){
         System.out.println("Month of birth: ");
         scanMonth();
