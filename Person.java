@@ -85,7 +85,7 @@ public class Person {
                 monthOfBirth = scanObj.nextInt();
                 flag = true;
             } catch (InputMismatchException e) {
-                System.out.println("Please enter a number");
+                System.out.println("Error: Please enter a number");
                 scanObj.nextLine();
                 continue;
             }
@@ -104,7 +104,7 @@ public class Person {
                 dayOfBirth = scanObj.nextInt();
                 flag = true;
             } catch (InputMismatchException e) {
-                System.out.println("Please enter a number");
+                System.out.println("Error: Please enter a number");
                 scanObj.nextLine();
                 continue;
             }
@@ -123,7 +123,7 @@ public class Person {
                 yearOfBirth = scanObj.nextInt();
                 flag = true;
             } catch (InputMismatchException e) {
-                System.out.println("Please enter a number");
+                System.out.println("Error: Please enter a number");
                 scanObj.nextLine();
                 continue;
             }
